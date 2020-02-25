@@ -1,6 +1,6 @@
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
-import schema from './schema/schema.js';
+import schema from './schema/schema';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
@@ -14,9 +14,13 @@ mongoose.connection.once('open', () => {
 });
 
 app.use('/graphql', graphqlHTTP({
-  schema,
+  schema: schema,
   graphiql: true
 }));
+
+app.use('/', (req, res) => {
+  res.send('Hello world');
+});
 
 app.listen(4000, () => {
   console.log('Listening on port 4000.');
