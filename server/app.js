@@ -12,6 +12,7 @@ mongoose.connect('mongodb://test:1234@localhost:27017/mydb?authSource=admin', { 
 mongoose.connection.once('open', () => {
     console.log('conneted to database');
 });
+
 app.use('/graphql', graphqlHTTP({
   schema,
   graphiql: true
