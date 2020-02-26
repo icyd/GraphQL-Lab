@@ -4,7 +4,7 @@ import ApolloClient from 'apollo-boost';
 import { BookList, AddBook } from './components';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql'
+  uri: 'http://localhost:5001/graphql'
 });
 
 

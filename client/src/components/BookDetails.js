@@ -8,10 +8,13 @@ class BookDetails extends Component {
     if (book) {
       return (
         <div>
-          <h2>{book.name}</h2>
+          <h2 className="font-bold">Name</h2>
+          <h3>{book.name}</h3>
+          <h2 className="font-bold mt-4">Genre</h2>
           <p>{book.genre}</p>
+          <h2 className="font-bold mt-4">Author's name</h2>
           <p>{book.author.name}</p>
-          <p>All books by this author</p>
+          <h2 className="font-bold mt-4">All books by this author</h2>
           <ul className="other-books">
             {book.author.books.map(item => {
               return <li key={item.id}>{item.name}</li>
